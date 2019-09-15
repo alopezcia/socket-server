@@ -27,7 +27,7 @@ export class UsuariosLista {
 
     // Obtener los usuarios conectados
     public getListUsuarios(){
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'sin-nombre');
     }
 
     // Obtener usuario por id

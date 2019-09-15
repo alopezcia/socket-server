@@ -30,12 +30,15 @@ export default class Server {
 
             socket.conectarCliente( cliente );
 
-            socket.configurarUsuario(cliente);
+            socket.configurarUsuario(cliente, this.io);
             
             // Desconectar
-            socket.desconectar(cliente);
-            // Escuvhar mensajes
+            socket.desconectar(cliente, this.io);
+            // Escuchar mensajes
             socket.mensaje(cliente, this.io);
+
+            // Obtener usuarios conectados
+            socket.obtenerUsuariosConectados(cliente, this.io);
         });
     }
 
